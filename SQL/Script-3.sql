@@ -7,12 +7,12 @@ select * from salary;
 
 create table roles(
 	id serial primary key,
-	role_title varchar(50) unique not null
+	role_thitle varchar(50) unique not null
 );
 
 select * from roles;
 
-create table roles_salary (
+create table role_salary (
 	id serial primary key,
 	id_role int not null,
 	id_salary int not null,
@@ -22,7 +22,7 @@ create table roles_salary (
 		references salary(id)
 );
 
-select * from roles_salary;
+select * from role_salary;
 
 insert into salary(id, monthly_salary)
 values (default, 1000),
@@ -40,25 +40,25 @@ values (1500),
       
 select * from salary;
 
-insert into roles(role_title)
-values ('QA_manual_junior'),
-	   ('QA_manual_middle'),
-	   ('QA_manual_senior'),
-	   ('QA_automation_junior'),
-	   ('QA_automation_middle'),
-	   ('QA_automation_senior'),
-	   ('Java_developer_junior'),
-	   ('Java_developer_middle'),
-	   ('Java_developer_senior'),	  
-	   ('CEO'),
-	   ('CTO'),
-	   ('HR'),		
- 	   ('Manager'),
-  	   ('Designer');
+insert into roles(id, role_thitle)
+values (default, 'QA_manual_junior'),
+	   (default, 'QA_manual_middle'),
+	   (default, 'QA_manual_senior'),
+	   (default, 'QA_automation_junior'),
+	   (default, 'QA_automation_middle'),
+	   (default, 'QA_automation_senior'),
+	   (default, 'Java_developer_junior'),
+	   (default, 'Java_developer_middle'),
+	   (default, 'Java_developer_senior'),	  
+	   (default, 'CEO'),
+	   (default, 'CTO'),
+	   (default, 'HR'),		
+ 	   (default, 'Manager'),
+  	   (default, 'Designer');
 	  
 select * from roles;
 
-inser into roles_salary (id_role, id_salary)
+insert into role_salary (id_role, id_salary)
 values (1, 1),
        (2, 2),     
        (3, 3),   
@@ -67,8 +67,8 @@ values (1, 1),
        (6, 9),   
        (7, 10);
 
-select * from roles_salary;
+select * from role_salary;
 
-
+select * from role_salary 
 
 		
